@@ -10,7 +10,7 @@ namespace _06.Max_Sequence_of_Equal_Elements
 
             var bestStart = 0;
             var longestLenght = 0;
-            var MatchCount = 0;
+            var currentLenght = 0;
 
             var endOfLoop = arr.Length;
 
@@ -20,7 +20,7 @@ namespace _06.Max_Sequence_of_Equal_Elements
                 {
                     if (arr[i] == arr[j])
                     {
-                        MatchCount++;
+                        currentLenght++;
                     }
                     else
                     {
@@ -28,12 +28,12 @@ namespace _06.Max_Sequence_of_Equal_Elements
                     }
                 }
 
-                if (MatchCount > longestLenght)
+                if (currentLenght > longestLenght)
                 {
-                    longestLenght = MatchCount;
+                    longestLenght = currentLenght;
                     bestStart = i;
                 }
-                MatchCount = 0;
+                currentLenght = 0;
             }
 
             for (int i = bestStart; i < (bestStart + longestLenght); i++)

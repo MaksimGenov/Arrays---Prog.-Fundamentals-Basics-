@@ -36,7 +36,7 @@ namespace _06.Max_Sequence_of_Equal_Elements
                 currentLenght = 0;
             }
 
-            for (int i = bestStart; i < (bestStart + longestLenght); i++)
+            for (int i = bestStart; i < bestStart + longestLenght; i++)
             {
                 Console.Write(arr[i] + " ");
             }

@@ -17,37 +17,13 @@ namespace _03.Fold_and_Sum
 
             for (int i = 0; i < k; i++)
             {
-                leftNumbers[i] = numbers[i];
-                rightNumbers[i] = numbers[3 * k + i];
-            }
-
-            ReverseArray(leftNumbers);
-            ReverseArray(rightNumbers);
-
-            for (int i = 0; i < 2 * k; i++)
-            {
-                middleNumbers[i] = numbers[k + i];
-            }
-
-            for (int i = 0; i < k; i++)
-            {
-                finalResult[i] = leftNumbers[i] + middleNumbers[i];
-                finalResult[k + i] = rightNumbers[i] + middleNumbers[k + i];
+                finalResult[0 + i] = numbers[k - 1 - i] + numbers[k + i];
+                finalResult[(2 * k - 1) - i] = numbers[(3 * k - 1) - i] + numbers[3 * k + i];
             }
 
             Console.WriteLine(string.Join(" ", finalResult));
-        }
 
-        private static void ReverseArray(int[] arrayToReverse)
-        {
-            var lenghtOfArray = arrayToReverse.Length;
 
-            for (int i = 0; i < lenghtOfArray / 2; i++)
-            {
-                var tempElement = arrayToReverse[i];
-                arrayToReverse[i] = arrayToReverse[(lenghtOfArray - 1) - i];
-                arrayToReverse[(lenghtOfArray - 1) - i] = tempElement;
-            }
         }
     }
 }

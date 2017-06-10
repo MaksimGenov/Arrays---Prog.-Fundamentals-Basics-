@@ -17,7 +17,7 @@ namespace _07.Max_Sequence_of_Increasing_Elements
 
             for (int i = 1; i < endOfLoop; i++)
             {
-                if (arr[i] == arr[i - 1] + 1)
+                if (arr[i] > arr[i - 1])
                 {
                     currentLenght++;
                 }
